@@ -42,5 +42,9 @@ public class CalculatorTest {
 		assertEquals(6, Calculator.add("1\n2,3"));
 		assertEquals(10, Calculator.add("1,2\n3\n4"));
 	}	
+	@Test
+	public void testMultipleNewLine() {
+		assertEquals(37, Calculator.add("1\n6\n4\n9\n3\n1,5\n8"));
+	}
 
 }

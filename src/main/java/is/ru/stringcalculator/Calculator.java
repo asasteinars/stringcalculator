@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 public class Calculator {
 
+
 	public static int add(String text){
 
 		if(text.length() == 1){ return toInt(text);}
