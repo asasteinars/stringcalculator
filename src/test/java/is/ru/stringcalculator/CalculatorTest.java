@@ -32,6 +32,11 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
+    @Test
+	public void testSevenNumbers() {
+		assertEquals(174, Calculator.add("2,8,7,9,3,22,123"));
+	}
+
 	@Test
 	public void testNewLine() {
 		assertEquals(6, Calculator.add("1\n2,3"));
