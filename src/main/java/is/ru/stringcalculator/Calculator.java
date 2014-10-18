@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 
 public class Calculator {
 
-
 	public static int add(String text){
 		
 		String delimiter = ",|\n";

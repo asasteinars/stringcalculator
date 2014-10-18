@@ -55,7 +55,11 @@ public class CalculatorTest {
 	public void testDelimiter()
 	{
 		assertEquals(13, Calculator.add("//;\n1;2;6\n4"));
+	}
 
+	@Test
+	public void testSemiComaDelimiter(){
+		assertEquals(16, Calculator.add("//;;5,5;5,1"));
 	}
 
 }
