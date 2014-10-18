@@ -92,8 +92,10 @@ public class CalculatorTest {
 	//“1001,2” á til dæmis að skila 2
 	public void testLargeInts() {
 		assertEquals(2, Calculator.add("1001,2"));
+		assertEquals(4, Calculator.add("2001,4"));
+		assertEquals(8, Calculator.add("3001,8"));
 	}
 
-	
+
 
 }
