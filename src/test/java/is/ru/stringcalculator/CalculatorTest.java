@@ -87,4 +87,13 @@ public class CalculatorTest {
 		}
 	}
 
+	@Test
+	//Tölur stærri en 1000 hunsum við
+	//“1001,2” á til dæmis að skila 2
+	public void testLargeInts() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
+
+	
+
 }

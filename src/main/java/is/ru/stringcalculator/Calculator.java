@@ -24,10 +24,13 @@ public class Calculator {
 	private static int toInt(String number){
 
 		int newNumber = Integer.parseInt(number);
-		if(newNumber < 0) { //Leyfum ekki mínustölur
+		if(newNumber <= 1000) { //Leyfum ekki tölur yfir 1000. 
+				return newNumber; //Hunsum þær og skilum minni tölunni
+		}
+		else if(newNumber < 0) { //Leyfum ekki mínustölur
 			negativeNumber(newNumber);//Ef þetta er mínustala hendum við villu
 		} 
-		return newNumber;//Annars skilum við bara tölunni
+		return 0;//Annars skilum við bara tölunni
 	}
 
 	private static int negativeNumber(int number) {
