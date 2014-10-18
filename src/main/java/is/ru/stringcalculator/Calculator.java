@@ -6,23 +6,27 @@ public class Calculator {
 
 
 	public static int add(String text){
-
-		if(text.length() == 1){ return toInt(text);}
-		if(text.equals("")){ return 0;}
-
-		else if(text.contains(",") || (text.contains("\n"))){
-			return sum(splitNumbers(text));
+		
+		String delimiter = ",|\n";
+		if(text.isEmpty()){ return 0; }
+		if(text.length() == 1){ return toInt(text); }
+		if(text.startsWith(";") || text.startsWith("\n")){
+			text = text.substring(1);
 		}
-		else
-			return 1;
+		else if(text.startsWith("//")){
+			delimiter = ",|\n" + "|";
+			delimiter = delimiter + text.substring(text.indexOf("//") + 2, text.indexOf("//") + 3);
+			text = text.substring((text.indexOf("//") + 4));
+		}
+		return sum(splitNumbers(text, delimiter));
 	}
 
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
 
-	private static String[] splitNumbers(String numbers){
-	    return numbers.split(",|\n");
+	private static String[] splitNumbers(String text, String delimiter){
+		return text.split(delimiter);
 	}
       
     private static int sum(String[] numbers){

@@ -46,5 +46,9 @@ public class CalculatorTest {
 	public void testMultipleNewLine() {
 		assertEquals(37, Calculator.add("1\n6\n4\n9\n3\n1,5\n8"));
 	}
+	@Test
+	public void testHashtagDelimiter() {
+		assertEquals(6, Calculator.add("//#\n2#4"));
+	}
 
 }
